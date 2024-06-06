@@ -20,7 +20,7 @@ module.exports = class UsersController{
         try{
             const user = await Users.findByPK(req.params.id)
             res.status(200).json({
-                data:user 
+                data: user 
             })
         } catch(e){
             res.status(500).json({

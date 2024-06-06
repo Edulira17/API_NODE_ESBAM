@@ -8,8 +8,9 @@ const app = express()
 
 const port = 3000
 app.use(express.static('public'))
-app.use(express.urlencoded({extended: true})) //habilitar para que possa fazer requisições do body
-app.use(express.json)
+/*Para reconhecer um parâmetro(variáveis) passado como uma requisição do tipo POST:*/
+app.use(express.urlencoded({extended: true})) //Aceita requisições do tipo url-encoded, ou seja, requisições de formulários e etc.
+app.use(express.json()) //Aceita JSON como requisição (importante para APIs)
 
 app.use('/', routes)
 
